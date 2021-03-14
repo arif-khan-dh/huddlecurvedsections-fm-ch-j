@@ -1,0 +1,33 @@
+@use './1-abstracts/functions' as func;
+
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap);
+
+
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    border: 1px solid red;
+    width: func.toRem(360px);    
+    display: flex;
+    flex-flow: column nowrap;
+    padding: func.toRem(38px);
+    padding-top: func.toRem(22px);
+}
