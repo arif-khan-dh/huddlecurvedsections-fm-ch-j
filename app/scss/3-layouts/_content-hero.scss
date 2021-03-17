@@ -1,0 +1,55 @@
+@use '../1-abstracts/colors';
+@use '../1-abstracts/fonts';
+@use '../1-abstracts/functions' as func;
+
+.hero {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    
+
+    .cta {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 79.2%;
+        color: colors.$very-dark-cyan;
+        text-shadow: 0 0 func.toRem(1px) rgba($color: colors.$very-dark-cyan, $alpha: 0.5) ;
+
+        .headline {
+            width: 89.3%;
+            font-size: fonts.$size-xxxlg;
+            font-weight: 700;
+        }
+
+        .subheadline {
+            margin-top: func.toRem(48px);
+            line-height: 1.4em;
+            font-size: fonts.$size-lg;
+        }
+
+        .btn {
+            margin-top: func.toRem(72px);
+            width: 68%;
+            // transition: opacity var(--btn-transition) ease-in-out, 
+            // box-shadow var(--btn-transition) ease-in-out;
+            
+
+            // &:hover {
+            //     opacity: 0.7;
+            //     box-shadow: 0 func.toRem(5px) func.toRem(8px) rgba($color: rgb(175, 173, 173), $alpha: 0.6);
+            // }
+        }
+
+    }
+
+    .image {
+        margin-top: func.toRem(156px);
+        width: 80%;
+
+        img {
+            width: 100%;
+        }
+    }
+}

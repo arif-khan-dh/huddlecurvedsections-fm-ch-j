@@ -1,3 +1,44 @@
+@use '../1-abstracts/colors';
+@use  '../1-abstracts/fonts';
+@use '../1-abstracts/functions' as func;
+@use '../1-abstracts/mixins' as mixin;
+
 .header {
-    
+    margin: var(--header-margin);
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .logo {
+        width: 29.8%;
+        // width: func.toRem(146px);
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .try {        
+        border: 1px solid colors.$pink;
+        font-size: fonts.$size-xsm;
+        color: colors.$pink;
+        padding: func.toRem(8px) func.toRem(25px);        
+        box-shadow: 0 0 4px rgba($color: colors.$light-pink, $alpha: 0.8);
+        transition: box-shadow var(--btn-transition) ease-in-out, 
+            color var(--btn-transition) ease-in-out;
+
+        // &:hover {
+        //     border: 1px solid colors.$light-pink;
+        //     color: colors.$light-pink;
+        //     box-shadow: 0 0 4px rgba($color: mix(colors.$very-dark-cyan, colors.$pink, 40%), $alpha: 0.7);
+        // }
+
+        @include mixin.hoverNfocus() {
+            border: 1px solid colors.$light-pink;
+            color: colors.$light-pink;
+            box-shadow: 0 0 4px rgba($color: mix(colors.$very-dark-cyan, colors.$pink, 40%), $alpha: 0.7);
+        }
+    }
 }

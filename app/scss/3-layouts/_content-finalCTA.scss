@@ -1,0 +1,22 @@
+@use '../1-abstracts/colors';
+@use '../1-abstracts/fonts';
+@use '../1-abstracts/functions' as func;
+
+.final-cta {
+    height: func.toRem(595px);
+    margin-top: func.toRem(110px);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .headline {
+        width: 65%;
+    }
+
+    .btn {
+        margin-top: func.toRem(66px);
+        width: 54%;
+    }
+
+}

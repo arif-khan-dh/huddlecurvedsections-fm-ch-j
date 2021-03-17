@@ -1,0 +1,41 @@
+@use '../1-abstracts/colors';
+@use '../1-abstracts/fonts';
+@use '../1-abstracts/functions' as func;
+
+.stats {
+    margin-top: func.toRem(184px);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    & > div {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: end;
+        height: func.toRem(200px);
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position-y: top 15%;
+
+        &:first-child {
+            background-image: url(../../../images/icon-communities.svg);   
+        }
+
+        &:last-child {
+            margin-top: func.toRem(120px);
+            background-image: url(../../../images/icon-messages.svg);
+        }
+    }
+
+    .number {
+        color: colors.$very-dark-cyan;
+        font-size: fonts.$size-xxxxxxxlg;
+        font-weight: 700;
+    }
+
+    .text {
+        text-align: center;
+        font-size: fonts.$size-sm;
+        color: rgba($color: colors.$very-dark-cyan, $alpha: 0.6);
+    }
+}

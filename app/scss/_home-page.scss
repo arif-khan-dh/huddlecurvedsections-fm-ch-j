@@ -1,9 +1,13 @@
 @use './1-abstracts/functions' as func;
+@use  './1-abstracts/fonts';
 
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap);
 
-
+:root {
+    --header-margin: #{func.toRem(35px)};
+    --btn-transition: 200ms;
+}
 
 html {
     font-size: 100%;
@@ -11,7 +15,7 @@ html {
 }
 
 *, *::before, *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 body {
@@ -21,13 +25,20 @@ body {
 
     display: flex;
     justify-content: center;
+
+    background-color: gray;
 }
 
 .container {
-    border: 1px solid red;
-    width: func.toRem(360px);    
+    font-family: "Open Sans", sans-serif;
+    font-size: fonts.$size-sm;
+    width: func.toRem(562px);
+    min-width: func.toRem(360px);
     display: flex;
     flex-flow: column nowrap;
-    padding: func.toRem(38px);
-    padding-top: func.toRem(22px);
+    background-color: white;
+}
+
+img {
+    display: block;
 }

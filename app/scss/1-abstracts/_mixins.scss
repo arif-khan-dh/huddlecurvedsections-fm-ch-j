@@ -11,3 +11,9 @@ $breakpoint-up: ("xlarge": toRem(1203px), "large": toRem(1115px), "medium": toRe
         @content;
     }
 }
+
+@mixin hoverNfocus() {
+    &:hover, &:focus {
+        @content;
+    }
+}

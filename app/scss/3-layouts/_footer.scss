@@ -1,0 +1,204 @@
+@use '../1-abstracts/colors';
+@use '../1-abstracts/fonts';
+@use '../1-abstracts/functions' as func;
+@use '../1-abstracts/mixins' as mixin;
+
+
+.footer {
+    --line-height: 1.8em;
+    // height: func.toRem(1255px);
+    // height: func.toRem(1260px);
+    padding: func.toRem(170px) func.toRem(40px) func.toRem(65px);
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    background:
+        url(../../../images/bg-footer-top-mobile.svg) top / 100% 8% no-repeat,
+        linear-gradient(white 7%, colors.$very-dark-cyan 7%, colors.$very-dark-cyan);
+    // background:
+    //     url(../../../images/bg-footer-top-mobile.svg) top / 100% 100px no-repeat,
+    //     linear-gradient(white 100px, colors.$very-dark-cyan 100px, colors.$very-dark-cyan);
+
+
+    div[class="text"] {
+        line-height: var(--line-height);
+        font-size: fonts.$size-lg;
+    }
+    
+    .newsletter {
+        text-align: left;
+
+        .headline {
+            font-family: fonts.$font-opensans;
+            text-align: left;
+            font-weight: 600;
+            // font-size: fonts.$size-lg;
+        }
+
+        .text {
+            margin-top: func.toRem(35px);            
+        }
+
+        .subscription {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: flex-end;
+
+            .email {
+                margin-top: func.toRem(50px);
+                width: 100%;
+    
+                input {           
+                    width: 100%;         
+                    height: func.toRem(72px);
+                    padding: 0 1.5rem;
+                    font-size: fonts.$size-lg;
+                    border-radius: func.toRem(10px);
+                    border: none;
+    
+                    &::placeholder {
+                        color: colors.$very-dark-cyan;
+                        opacity: 0.3;
+                    }
+    
+                    &:focus {
+                        border: 2px solid colors.$pink;
+                        outline: none;
+                    }
+
+                    &:focus:invalid, &:invalid {
+                        border: 2px solid colors.$light-red;
+                    }
+                }
+
+                .error-msg {
+                    max-height: 0;
+                    overflow: hidden;
+                    color: colors.$light-red;
+                    margin-left: func.toRem(5px);
+                    margin-top: func.toRem(10px);
+                    opacity: 0.6;
+                    transition: max-height var(--btn-transition) ease-in-out;
+                }
+                
+                input:invalid ~ .error-msg {
+                    max-height: func.toRem(30px);                    
+                }
+
+
+            }
+
+            .btn {
+                margin-top: func.toRem(22px);
+                width: 50%;
+                box-shadow: none;
+                border-radius: func.toRem(10px);
+                min-width: 0px;
+
+                &:hover, &:focus{
+                    filter: brightness(1.5);
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .contact {
+        --icon-padding-right: #{func.toRem(22px)};
+        margin-top: func.toRem(155px);
+
+        *::before {
+            padding-right: var(--icon-padding-right);
+        }
+
+        .logo {
+            width: 100%;
+            
+            svg {
+                width: 62%;
+                height: auto;
+                path {
+                    fill: white;
+                }
+            }
+        }
+
+        .text {
+            margin-top: func.toRem(30px);            
+        }
+
+        .phone, .email {
+            font-size: fonts.$size-lg;
+            display: flex;
+
+            img {
+                display: inline-block;
+                padding-right: var(--icon-padding-right);
+                height: 28px;
+            }            
+        }
+
+        .phone {
+            margin-top: func.toRem(60px);
+        }
+
+        .email {
+            margin-top: func.toRem(40px);
+        }
+
+        .social-media {
+            margin-top: func.toRem(70px);
+            display: flex;
+
+            svg {
+                width: func.toRem(36px);
+                height: func.toRem(36px);
+                
+                path {
+                    fill: white;
+                    transition: fill var(--btn-transition) ease-in-out;
+                }
+
+                &:nth-child(2n+1) {
+                    background-color: white;
+                    border-radius: func.toRem(5px);
+                    margin-top: func.toRem(3px);
+                    transition: background-color var(--btn-transition) ease-in-out;
+
+                    path {
+                        fill: colors.$very-dark-cyan;
+                    }
+
+                    @include mixin.hoverNfocus() {
+                        background-color: colors.$dark-cyan;
+                    }
+                }
+
+                &:nth-child(2){
+                    --icon-insta-side: #{func.toRem(42px)};
+                    width: var(--icon-insta-side);
+                    height: var(--icon-insta-side);
+                    padding: 0;
+
+                    @include mixin.hoverNfocus() {
+                        path {
+                            fill: colors.$dark-cyan;
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: var(--icon-padding-right);
+                }
+
+                &:first-child {
+                    padding: func.toRem(4px) 0 func.toRem(4px) func.toRem(10px);
+                }
+
+                &:last-child {
+                    padding: func.toRem(6px);
+                }
+            }
+        }
+    }
+}

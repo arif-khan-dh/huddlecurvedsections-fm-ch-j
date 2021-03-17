@@ -1,1 +1,10 @@
 @use 'home-page';
+@use  './3-layouts/header';
+@use  './2-components/btn';
+@use './2-components/headline';
+@use './3-layouts/content';
+@use './3-layouts/content-hero';
+@use  './3-layouts/content-stats';
+@use './3-layouts/content-sections';
+@use './3-layouts/content-finalCTA';
+@use  './3-layouts/footer';
