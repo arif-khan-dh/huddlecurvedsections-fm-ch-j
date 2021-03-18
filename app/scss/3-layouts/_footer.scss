@@ -5,11 +5,7 @@
 
 
 .footer {
-    --line-height: 1.8em;
-    // height: func.toRem(1255px);
-    // height: func.toRem(1260px);
     padding: func.toRem(170px) func.toRem(40px) func.toRem(65px);
-    color: white;
     display: flex;
     flex-flow: column nowrap;
     background:
@@ -19,21 +15,8 @@
     //     url(../../../images/bg-footer-top-mobile.svg) top / 100% 100px no-repeat,
     //     linear-gradient(white 100px, colors.$very-dark-cyan 100px, colors.$very-dark-cyan);
 
-
-    div[class="text"] {
-        line-height: var(--line-height);
-        font-size: fonts.$size-lg;
-    }
     
     .newsletter {
-        text-align: left;
-
-        .headline {
-            font-family: fonts.$font-opensans;
-            text-align: left;
-            font-weight: 600;
-            // font-size: fonts.$size-lg;
-        }
 
         .text {
             margin-top: func.toRem(35px);            
@@ -51,13 +34,11 @@
                 input {           
                     width: 100%;         
                     height: func.toRem(72px);
-                    padding: 0 1.5rem;
-                    font-size: fonts.$size-lg;
+                    padding: 0 1.5rem;                    
                     border-radius: func.toRem(10px);
                     border: none;
     
                     &::placeholder {
-                        color: colors.$very-dark-cyan;
                         opacity: 0.3;
                     }
     
@@ -74,7 +55,6 @@
                 .error-msg {
                     max-height: 0;
                     overflow: hidden;
-                    color: colors.$light-red;
                     margin-left: func.toRem(5px);
                     margin-top: func.toRem(10px);
                     opacity: 0.6;
@@ -107,9 +87,9 @@
         --icon-padding-right: #{func.toRem(22px)};
         margin-top: func.toRem(155px);
 
-        *::before {
-            padding-right: var(--icon-padding-right);
-        }
+        // *::before {
+        //     padding-right: var(--icon-padding-right);
+        // }
 
         .logo {
             width: 100%;
@@ -128,7 +108,6 @@
         }
 
         .phone, .email {
-            font-size: fonts.$size-lg;
             display: flex;
 
             img {

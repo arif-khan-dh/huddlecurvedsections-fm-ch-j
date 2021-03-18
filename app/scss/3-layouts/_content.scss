@@ -1,5 +1,11 @@
 @use '../1-abstracts/functions' as func;
+@use '../1-abstracts/mixins' as mixin;
 
 .content {
     margin-top: func.toRem(175px);
+    
+
+    @include mixin.breakpoint-up(medium) {
+        margin-top: func.toRem(116px);
+    }
 }

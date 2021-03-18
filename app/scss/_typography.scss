@@ -1,0 +1,116 @@
+@use './1-abstracts/colors';
+@use './1-abstracts/fonts';
+@use './1-abstracts/functions' as func;
+@use './1-abstracts/mixins' as mixin;
+
+:root {   
+    // Font size
+    --mobile-body-font-size: #{fonts.$size-sm};
+    --mobile-headline-font-size: #{fonts.$size-xxlg};
+    --mobile-btn-font-size: #{fonts.$size-sm};
+
+    // Font color
+    --body-color: #{colors.$very-dark-cyan};
+    --footer-color: white;
+
+}
+
+html {
+    font-size: 100%;
+}
+
+input {
+    font-size: fonts.$size-lg;
+
+    &::placeholder {
+        color: colors.$very-dark-cyan;
+    }
+}
+
+.container {
+    font-family: fonts.$font-opensans, sans-serif;
+    font-size: var(--mobile-body-font-size);
+    text-align: center;
+    color: var(--body-color);
+}
+
+.primary {
+    color: white;
+    // font-size: fonts.$size-sm; // inherites from .container
+    font-weight: 600;
+}
+
+.headline {
+    font-family: fonts.$font-poppins;
+    font-size: var(--mobile-headline-font-size);
+    font-weight: 700;
+    text-shadow: 0 0 func.toRem(1px) rgba($color: colors.$very-dark-cyan, $alpha: 0.5) ;
+}
+
+.text {
+    font-size: var(--mobile-body-font-size);
+    text-shadow: 0 0 func.toRem(1px) rgba($color: colors.$very-dark-cyan, $alpha: 0.5) ;
+}
+
+.cta {
+    .headline {        
+        font-size: fonts.$size-xxxlg;
+
+        @include mixin.breakpoint-up(medium) {
+            font-size: fonts.$size-xxlg;
+        }
+    }
+
+    .sub-headline {
+        line-height: 1.4em;
+        font-size: fonts.$size-lg;
+    }
+
+    .btn {
+        @include mixin.breakpoint-up(small) {            
+            font-size: fonts.$size-sm;
+        }
+    }
+
+}
+
+.stats {
+    .number {
+        color: colors.$very-dark-cyan;
+        font-size: fonts.$size-xxxxxxxlg;
+        font-weight: 700;
+    }
+
+    .text {
+        color: rgba($color: colors.$very-dark-cyan, $alpha: 0.6);
+    }
+}
+
+.section {
+    .text {
+        font-size: fonts.$size-lg;
+    }
+}
+
+.footer {
+    --line-height: 1.8em;
+    color: var(--footer-color);
+    text-align: left;
+
+    .text {
+        line-height: var(--line-height);
+        font-size: fonts.$size-lg;
+    }
+
+    .error-msg {        
+        color: colors.$light-red;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .phone, .email {
+        font-size: fonts.$size-lg;
+    }
+}

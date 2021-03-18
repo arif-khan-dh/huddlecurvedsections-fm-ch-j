@@ -26,16 +26,4 @@
             background-image: url(../../../images/icon-messages.svg);
         }
     }
-
-    .number {
-        color: colors.$very-dark-cyan;
-        font-size: fonts.$size-xxxxxxxlg;
-        font-weight: 700;
-    }
-
-    .text {
-        text-align: center;
-        font-size: fonts.$size-sm;
-        color: rgba($color: colors.$very-dark-cyan, $alpha: 0.6);
-    }
 }

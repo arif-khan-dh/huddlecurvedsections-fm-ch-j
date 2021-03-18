@@ -29,12 +29,6 @@
         transition: box-shadow var(--btn-transition) ease-in-out, 
             color var(--btn-transition) ease-in-out;
 
-        // &:hover {
-        //     border: 1px solid colors.$light-pink;
-        //     color: colors.$light-pink;
-        //     box-shadow: 0 0 4px rgba($color: mix(colors.$very-dark-cyan, colors.$pink, 40%), $alpha: 0.7);
-        // }
-
         @include mixin.hoverNfocus() {
             border: 1px solid colors.$light-pink;
             color: colors.$light-pink;

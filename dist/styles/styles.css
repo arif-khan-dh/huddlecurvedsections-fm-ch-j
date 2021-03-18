@@ -6,7 +6,6 @@
 }
 
 html {
-  font-size: 100%;
   box-sizing: border-box;
 }
 
@@ -23,18 +22,115 @@ body {
   background-color: gray;
 }
 
+img {
+  display: block;
+}
+
 .container {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
   width: 35.125rem;
   min-width: 22.5rem;
   display: flex;
   flex-flow: column nowrap;
   background-color: white;
 }
+@media (min-width: 35.125rem) {
+  .container {
+    width: 100%;
+    max-width: 45rem;
+  }
+}
 
-img {
-  display: block;
+:root {
+  --mobile-body-font-size: 1rem;
+  --mobile-headline-font-size: 1.75rem;
+  --mobile-btn-font-size: 1rem;
+  --body-color: #00252e;
+  --footer-color: white;
+}
+
+html {
+  font-size: 100%;
+}
+
+input {
+  font-size: 1.25rem;
+}
+input::placeholder {
+  color: #00252e;
+}
+
+.container {
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--mobile-body-font-size);
+  text-align: center;
+  color: var(--body-color);
+}
+
+.primary {
+  color: white;
+  font-weight: 600;
+}
+
+.headline {
+  font-family: "Poppins";
+  font-size: var(--mobile-headline-font-size);
+  font-weight: 700;
+  text-shadow: 0 0 0.0625rem rgba(0, 37, 46, 0.5);
+}
+
+.text {
+  font-size: var(--mobile-body-font-size);
+  text-shadow: 0 0 0.0625rem rgba(0, 37, 46, 0.5);
+}
+
+.cta .headline {
+  font-size: 2rem;
+}
+@media (min-width: 38.25rem) {
+  .cta .headline {
+    font-size: 1.75rem;
+  }
+}
+.cta .sub-headline {
+  line-height: 1.4em;
+  font-size: 1.25rem;
+}
+@media (min-width: 35.125rem) {
+  .cta .btn {
+    font-size: 1rem;
+  }
+}
+
+.stats .number {
+  color: #00252e;
+  font-size: 5rem;
+  font-weight: 700;
+}
+.stats .text {
+  color: rgba(0, 37, 46, 0.6);
+}
+
+.section .text {
+  font-size: 1.25rem;
+}
+
+.footer {
+  --line-height: 1.8em;
+  color: var(--footer-color);
+  text-align: left;
+}
+.footer .text {
+  line-height: var(--line-height);
+  font-size: 1.25rem;
+}
+.footer .error-msg {
+  color: #ff4242;
+}
+.footer .btn {
+  text-align: center;
+}
+.footer .phone, .footer .email {
+  font-size: 1.25rem;
 }
 
 .header {
@@ -67,16 +163,12 @@ img {
 
 .btn {
   cursor: pointer;
-  text-align: center;
   border-radius: 1.875rem;
 }
 
 .primary {
   min-width: 15.625rem;
   background-color: #ff52bf;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
   padding: 1.125rem 0;
   box-shadow: 0 0.3125rem 0.5rem rgba(175, 173, 173, 0.8);
   transition: filter var(--btn-transition) ease-in-out, box-shadow var(--btn-transition) ease-in-out;
@@ -86,20 +178,16 @@ img {
   box-shadow: 0 0.3125rem 0.5rem rgba(175, 173, 173, 0.6);
 }
 
-.headline {
-  text-align: center;
-  font-family: "Poppins";
-  font-size: 1.75rem;
-  font-weight: 700;
-  text-shadow: 0 0 0.0625rem rgba(0, 37, 46, 0.5);
-}
-
 .content {
   margin-top: 10.9375rem;
 }
+@media (min-width: 38.25rem) {
+  .content {
+    margin-top: 7.25rem;
+  }
+}
 
 .hero {
-  text-align: center;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -109,22 +197,28 @@ img {
   flex-flow: column nowrap;
   align-items: center;
   width: 79.2%;
-  color: #00252e;
-  text-shadow: 0 0 0.0625rem rgba(0, 37, 46, 0.5);
 }
 .hero .cta .headline {
   width: 89.3%;
-  font-size: 2rem;
-  font-weight: 700;
 }
-.hero .cta .subheadline {
+.hero .cta .sub-headline {
   margin-top: 3rem;
-  line-height: 1.4em;
-  font-size: 1.25rem;
+}
+@media (min-width: 38.25rem) {
+  .hero .cta .sub-headline {
+    margin-top: 1rem;
+  }
 }
 .hero .cta .btn {
   margin-top: 4.5rem;
   width: 68%;
+}
+@media (min-width: 35.125rem) {
+  .hero .cta .btn {
+    --primary-btn-width: calc(18.9375rem + 22.25rem);
+    width: calc(var(--primary-btn-width) - 80%);
+    min-width: 0;
+  }
 }
 .hero .image {
   margin-top: 9.75rem;
@@ -155,16 +249,6 @@ img {
 .stats > div:last-child {
   margin-top: 7.5rem;
   background-image: url(../../../images/icon-messages.svg);
-}
-.stats .number {
-  color: #00252e;
-  font-size: 5rem;
-  font-weight: 700;
-}
-.stats .text {
-  text-align: center;
-  font-size: 1rem;
-  color: rgba(0, 37, 46, 0.6);
 }
 
 .sections {
@@ -203,9 +287,8 @@ img {
   font-size: 1.5rem;
   color: #00252e;
 }
-.sections .benefit .subheadline {
+.sections .benefit .text {
   margin-top: 1.875rem;
-  font-size: 1.25rem;
 }
 
 .final-cta {
@@ -224,24 +307,10 @@ img {
 }
 
 .footer {
-  --line-height: 1.8em;
   padding: 10.625rem 2.5rem 4.0625rem;
-  color: white;
   display: flex;
   flex-flow: column nowrap;
   background: url(../../../images/bg-footer-top-mobile.svg) top/100% 8% no-repeat, linear-gradient(white 7%, #00252e 7%, #00252e);
-}
-.footer div[class=text] {
-  line-height: var(--line-height);
-  font-size: 1.25rem;
-}
-.footer .newsletter {
-  text-align: left;
-}
-.footer .newsletter .headline {
-  font-family: "Open Sans";
-  text-align: left;
-  font-weight: 600;
 }
 .footer .newsletter .text {
   margin-top: 2.1875rem;
@@ -259,12 +328,10 @@ img {
   width: 100%;
   height: 4.5rem;
   padding: 0 1.5rem;
-  font-size: 1.25rem;
   border-radius: 0.625rem;
   border: none;
 }
 .footer .newsletter .subscription .email input::placeholder {
-  color: #00252e;
   opacity: 0.3;
 }
 .footer .newsletter .subscription .email input:focus {
@@ -277,7 +344,6 @@ img {
 .footer .newsletter .subscription .email .error-msg {
   max-height: 0;
   overflow: hidden;
-  color: #ff4242;
   margin-left: 0.3125rem;
   margin-top: 0.625rem;
   opacity: 0.6;
@@ -301,9 +367,6 @@ img {
   --icon-padding-right: 1.375rem;
   margin-top: 9.6875rem;
 }
-.footer .contact *::before {
-  padding-right: var(--icon-padding-right);
-}
 .footer .contact .logo {
   width: 100%;
 }
@@ -318,7 +381,6 @@ img {
   margin-top: 1.875rem;
 }
 .footer .contact .phone, .footer .contact .email {
-  font-size: 1.25rem;
   display: flex;
 }
 .footer .contact .phone img, .footer .contact .email img {
