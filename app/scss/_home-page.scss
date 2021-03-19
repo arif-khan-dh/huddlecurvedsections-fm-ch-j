@@ -7,7 +7,9 @@
 
 :root {
     // Length
-    --header-margin: #{func.toRem(35px)};
+    --mobile-header-margin: #{func.toRem(35px)};
+    --desktop-header-margin: calc(var(--mobile-header-margin) + #{func.toRem(5px)});
+    --desktop-section-gap: #{func.toRem(60px)};  // Content,
     
     // Time
     --btn-transition: 200ms;
@@ -30,7 +32,7 @@ body {
     justify-content: center;
 
     //debug
-    background-color: gray;
+    // background-color: gray;
 }
 
 img {

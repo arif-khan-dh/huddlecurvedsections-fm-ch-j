@@ -11,25 +11,52 @@
     background:
         url(../../../images/bg-footer-top-mobile.svg) top / 100% 8% no-repeat,
         linear-gradient(white 7%, colors.$very-dark-cyan 7%, colors.$very-dark-cyan);
-    // background:
-    //     url(../../../images/bg-footer-top-mobile.svg) top / 100% 100px no-repeat,
-    //     linear-gradient(white 100px, colors.$very-dark-cyan 100px, colors.$very-dark-cyan);
 
+    @include mixin.breakpoint-up(large) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: func.toRem(140px) func.toRem(58px) func.toRem(48px);
+        background:
+            url(../../../images/bg-footer-top-desktop.svg) top / 100% 8% no-repeat,
+            linear-gradient(white 8%, colors.$very-dark-cyan 8%, colors.$very-dark-cyan);
+    }
     
     .newsletter {
 
+        @include mixin.breakpoint-up(large) {
+            width: func.toRem(260px);
+        }
+
         .text {
-            margin-top: func.toRem(35px);            
+            margin-top: func.toRem(35px);
+            
+            @include mixin.breakpoint-up(large) {
+                margin-top: func.toRem(14px);
+            }
         }
 
         .subscription {
             display: flex;
             flex-flow: column nowrap;
             align-items: flex-end;
+            margin-top: func.toRem(50px);
 
-            .email {
-                margin-top: func.toRem(50px);
+            @include mixin.breakpoint-up(large) {
+                --border-radius: #{func.toRem(3px)};
+                --height: #{func.toRem(24px)};
+                margin-top: func.toRem(20px);
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+
+            }
+
+            .email {                
                 width: 100%;
+
+                @include mixin.breakpoint-up(large) {
+                    width: func.toRem(160px);
+                }
     
                 input {           
                     width: 100%;         
@@ -37,6 +64,13 @@
                     padding: 0 1.5rem;                    
                     border-radius: func.toRem(10px);
                     border: none;
+
+                    @include mixin.breakpoint-up(large) {
+                        height: var(--height);
+                        border-radius: var(--border-radius);
+                        width: func.toRem(160px);
+                        padding: 0 .75rem;
+                    }
     
                     &::placeholder {
                         opacity: 0.3;
@@ -59,13 +93,15 @@
                     margin-top: func.toRem(10px);
                     opacity: 0.6;
                     transition: max-height var(--btn-transition) ease-in-out;
+
+                    @include mixin.breakpoint-up(large) {
+                        margin-top: func.toRem(5px);
+                    }
                 }
                 
                 input:invalid ~ .error-msg {
                     max-height: func.toRem(30px);                    
                 }
-
-
             }
 
             .btn {
@@ -74,6 +110,14 @@
                 box-shadow: none;
                 border-radius: func.toRem(10px);
                 min-width: 0px;
+
+                @include mixin.breakpoint-up(large) {
+                    margin-top: 0;
+                    width: func.toRem(80px);
+                    height: var(--height);
+                    border-radius: var(--border-radius);
+                    padding: 3px;
+                }
 
                 &:hover, &:focus{
                     filter: brightness(1.5);
@@ -87,9 +131,10 @@
         --icon-padding-right: #{func.toRem(22px)};
         margin-top: func.toRem(155px);
 
-        // *::before {
-        //     padding-right: var(--icon-padding-right);
-        // }
+        @include mixin.breakpoint-up(large) {
+            margin-top: 0;
+            width: func.toRem(200px);
+        }
 
         .logo {
             width: 100%;
@@ -100,11 +145,20 @@
                 path {
                     fill: white;
                 }
+
+                @include mixin.breakpoint-up(large) {
+                    width: 75%;              
+                }
+
             }
         }
 
         .text {
-            margin-top: func.toRem(30px);            
+            margin-top: func.toRem(30px);
+            
+            @include mixin.breakpoint-up(large) {
+                margin-top: func.toRem(12px);                
+            }
         }
 
         .phone, .email {
@@ -113,25 +167,47 @@
             img {
                 display: inline-block;
                 padding-right: var(--icon-padding-right);
-                height: 28px;
+                height: func.toRem(28px);
+
+                @include mixin.breakpoint-up(large) {
+                    height: func.toRem(16px);
+                    padding-right: func.toRem(12px);
+                }
             }            
         }
 
         .phone {
             margin-top: func.toRem(60px);
+
+            @include mixin.breakpoint-up(large) {
+                margin-top: func.toRem(14px);
+            }
         }
 
         .email {
             margin-top: func.toRem(40px);
+
+            @include mixin.breakpoint-up(large) {
+                margin-top: func.toRem(12px);
+            }
         }
 
         .social-media {
             margin-top: func.toRem(70px);
             display: flex;
 
+            @include mixin.breakpoint-up(large) {
+                margin-top: func.toRem(40px);
+            }
+
             svg {
                 width: func.toRem(36px);
                 height: func.toRem(36px);
+
+                @include mixin.breakpoint-up(large) {
+                    width: func.toRem(24px);
+                    height: func.toRem(24px);
+                }
                 
                 path {
                     fill: white;
@@ -143,6 +219,10 @@
                     border-radius: func.toRem(5px);
                     margin-top: func.toRem(3px);
                     transition: background-color var(--btn-transition) ease-in-out;
+
+                    @include mixin.breakpoint-up(large) {
+                        margin-top: func.toRem(2px);
+                    }
 
                     path {
                         fill: colors.$very-dark-cyan;
@@ -159,6 +239,12 @@
                     height: var(--icon-insta-side);
                     padding: 0;
 
+                    @include mixin.breakpoint-up(large) {
+                        --icon-insta-side: #{func.toRem(28px)};
+                        width: var(--icon-insta-side);
+                        height: var(--icon-insta-side);
+                    }
+
                     @include mixin.hoverNfocus() {
                         path {
                             fill: colors.$dark-cyan;
@@ -172,10 +258,18 @@
 
                 &:first-child {
                     padding: func.toRem(4px) 0 func.toRem(4px) func.toRem(10px);
+
+                    @include mixin.breakpoint-up(large) {
+                        padding: func.toRem(3px) 0 func.toRem(3px) func.toRem(6px);
+                    }
                 }
 
                 &:last-child {
                     padding: func.toRem(6px);
+                    
+                    @include mixin.breakpoint-up(large) {
+                        padding: func.toRem(4px);
+                    }
                 }
             }
         }

@@ -15,6 +15,7 @@
     box-shadow: 0 func.toRem(5px) func.toRem(8px) rgba($color: rgb(175, 173, 173), $alpha: 0.8);
     transition: filter var(--btn-transition) ease-in-out, 
     box-shadow var(--btn-transition) ease-in-out;
+    max-width: func.toRem(300px);
 
     @include mixin.hoverNfocus() {
         filter: brightness(1.3);

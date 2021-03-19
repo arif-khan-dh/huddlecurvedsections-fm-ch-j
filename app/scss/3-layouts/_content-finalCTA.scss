@@ -1,6 +1,7 @@
 @use '../1-abstracts/colors';
 @use '../1-abstracts/fonts';
 @use '../1-abstracts/functions' as func;
+@use '../1-abstracts/mixins' as mixin;
 
 .final-cta {
     height: func.toRem(595px);
@@ -10,6 +11,12 @@
     flex-flow: column nowrap;
     align-items: center;
 
+    @include  mixin.breakpoint-up(large) {
+        height: func.toRem(263px);
+        margin-top: 0;
+        justify-content: center;
+    }
+
     .headline {
         width: 65%;
     }
@@ -17,6 +24,10 @@
     .btn {
         margin-top: func.toRem(66px);
         width: 54%;
+
+        @include  mixin.breakpoint-up(large) {
+            margin-top: func.toRem(22px);
+        }
     }
 
 }

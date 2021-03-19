@@ -1,61 +1,103 @@
 @use '../1-abstracts/colors';
 @use '../1-abstracts/fonts';
 @use '../1-abstracts/functions' as func;
-
+@use '../1-abstracts/mixins' as mixin;
 
 .sections {
     margin-top: func.toRem(36px);
 
     .section {
-        display: flex;
-        flex-flow: column nowrap;
-    }    
-
-    .benefit {
         height: func.toRem(1062px);
         display: flex;
         flex-flow: column nowrap;
         justify-content: end;
         align-items: center;
-        text-align: center;
+        padding-bottom: func.toRem(180px);
 
-        & > div {
+        @include mixin.breakpoint-up(large) {
+            height: func.toRem(425px);
+            flex-flow: row-reverse nowrap;
+            justify-content: space-evenly;
+            padding-bottom: 0;
+        }
+
+        .hero {
+            width: 70%;
+
+            @include mixin.breakpoint-up(large) {
+                width: 35%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+
+        .content {
             width: 80%;
+            margin-top: func.toRem(110px);
+
+            @include mixin.breakpoint-up(large) {
+                width: 35%;
+                margin-top: 0;
+            }
+
+            .text {
+                margin-top: func.toRem(30px);
+
+                @include mixin.breakpoint-up(large) {
+                    margin-top: func.toRem(15px);
+                }
+            }
         }
 
         &:first-child {
             background:
                 url(.././../../images/bg-section-top-mobile-1.svg) top / 100% 10% no-repeat,
                 url(../../../images/bg-section-bottom-mobile-1.svg) bottom / 100% 10% no-repeat,
-                url(../../../images/illustration-grow-together.svg) center top 40% / 60% no-repeat,
                 linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
-            padding-bottom: func.toRem(180px);
+            
+            @include mixin.breakpoint-up(large) {
+                background:
+                    url(.././../../images/bg-section-top-desktop-1.svg) top / 100% 10% no-repeat,
+                    url(../../../images/bg-section-bottom-desktop-1.svg) bottom / 100% 10% no-repeat,
+                    linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
+                
+            }
         }
 
         &:nth-child(2) {
             height: func.toRem(966px);
-            background: 
-                url(../../../images/illustration-flowing-conversation.svg) center top 30% / 70% no-repeat;
-            padding-bottom: func.toRem(180px);
+
+            @include mixin.breakpoint-up(large) {
+                height: func.toRem(345px);
+                flex-direction: row;
+            }
         }
 
         &:last-child {
             background:
                 url(.././../../images/bg-section-top-mobile-2.svg) top / 100% 10% no-repeat,
                 url(../../../images/bg-section-bottom-mobile-2.svg) bottom / 100% 10% no-repeat,
-                url(../../../images/illustration-your-users.svg) center top 25% / 60% no-repeat,
                 linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
-            padding-bottom: func.toRem(300px);
+            // padding-bottom: func.toRem(300px);
+
+            @include mixin.breakpoint-up(large) {
+                background:
+                    url(.././../../images/bg-section-top-desktop-2.svg) top / 100% 10% no-repeat,
+                    url(../../../images/bg-section-bottom-desktop-2.svg) bottom / 100% 10% no-repeat,
+                    linear-gradient(white 10%, colors.$very-pale-blue 10% 92%, white 92%);
+                
+            }
         }
 
-        .headline {
-            font-family: fonts.$font-poppins;
-            font-size: fonts.$size-xlg;
-            color: colors.$very-dark-cyan;
-        }
+        // .headline {
+        //     font-family: fonts.$font-poppins;
+        //     font-size: fonts.$size-xlg;
+        //     color: colors.$very-dark-cyan;
+        // }
 
-        .text {
-            margin-top: func.toRem(30px);
-        }
+
     }
 }

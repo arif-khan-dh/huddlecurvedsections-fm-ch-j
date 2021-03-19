@@ -2,7 +2,7 @@
 
 $breakpoint-up: (
     "xlarge": func.toRem(1203px), 
-    "large": func.toRem(1115px), 
+    "large": func.toRem(740px), // have to find out why it works
     "medium": func.toRem(612px), 
     "small": func.toRem(562px)
 );

@@ -8,7 +8,8 @@
     --mobile-body-font-size: #{fonts.$size-sm};
     --mobile-headline-font-size: #{fonts.$size-xxlg};
     --mobile-btn-font-size: #{fonts.$size-sm};
-
+    --desktop-body-font-size: #{fonts.$size-xsm};
+    --desktop-headline-font-size: #{fonts.$size-xlg};
     // Font color
     --body-color: #{colors.$very-dark-cyan};
     --footer-color: white;
@@ -22,6 +23,10 @@ html {
 input {
     font-size: fonts.$size-lg;
 
+    @include mixin.breakpoint-up(large) {
+        font-size: fonts.$size-xxsm;
+    }
+
     &::placeholder {
         color: colors.$very-dark-cyan;
     }
@@ -34,10 +39,21 @@ input {
     color: var(--body-color);
 }
 
+.btn {
+    text-align: center;
+}
+
 .primary {
     color: white;
-    // font-size: fonts.$size-sm; // inherites from .container
     font-weight: 600;
+
+    @include mixin.breakpoint-up(medium) {
+        font-size: fonts.$size-xsm;
+    }
+
+    @include mixin.breakpoint-up(large) {
+        font-size: fonts.$size-xxsm;
+    }
 }
 
 .headline {
@@ -45,33 +61,51 @@ input {
     font-size: var(--mobile-headline-font-size);
     font-weight: 700;
     text-shadow: 0 0 func.toRem(1px) rgba($color: colors.$very-dark-cyan, $alpha: 0.5) ;
+
+    @include mixin.breakpoint-up(large) {
+        font-size: var(--desktop-headline-font-size);
+    }
 }
 
 .text {
     font-size: var(--mobile-body-font-size);
     text-shadow: 0 0 func.toRem(1px) rgba($color: colors.$very-dark-cyan, $alpha: 0.5) ;
+
+    @include mixin.breakpoint-up(large) {
+        font-size: var(--desktop-body-font-size);
+    }
 }
 
 .cta {
     .headline {        
         font-size: fonts.$size-xxxlg;
 
-        @include mixin.breakpoint-up(medium) {
+        @include mixin.breakpoint-up(small) {
             font-size: fonts.$size-xxlg;
+        }
+
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-xlg;
         }
     }
 
     .sub-headline {
         line-height: 1.4em;
         font-size: fonts.$size-lg;
-    }
 
-    .btn {
-        @include mixin.breakpoint-up(small) {            
+        @include mixin.breakpoint-up(small) {
+            font-size: fonts.$size-md;
+            
+        }
+
+        @include mixin.breakpoint-up(medium) {
             font-size: fonts.$size-sm;
         }
-    }
 
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-xsm;
+        }
+    }
 }
 
 .stats {
@@ -79,6 +113,10 @@ input {
         color: colors.$very-dark-cyan;
         font-size: fonts.$size-xxxxxxxlg;
         font-weight: 700;
+
+        @include mixin.breakpoint-up(medium) {
+            font-size: fonts.$size-xxxxxlg;
+        }
     }
 
     .text {
@@ -87,8 +125,16 @@ input {
 }
 
 .section {
+    @include mixin.breakpoint-up(large) {
+        text-align: left;
+    }
+
     .text {
         font-size: fonts.$size-lg;
+
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-xxxsm;
+        }
     }
 }
 
@@ -100,17 +146,22 @@ input {
     .text {
         line-height: var(--line-height);
         font-size: fonts.$size-lg;
+
+        @include mixin.breakpoint-up(large) {
+            line-height: var(--line-height);
+            font-size: fonts.$size-xxxsm;
+        }
     }
 
     .error-msg {        
         color: colors.$light-red;
     }
 
-    .btn {
-        text-align: center;
-    }
-
     .phone, .email {
         font-size: fonts.$size-lg;
+
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-xxsm;
+        }
     }
 }

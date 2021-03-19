@@ -4,11 +4,16 @@
 @use '../1-abstracts/mixins' as mixin;
 
 .header {
-    margin: var(--header-margin);
+    margin: var(--mobile-header-margin);
     margin-bottom: 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+
+    @include mixin.breakpoint-up(medium) {
+        margin: var(--desktop-header-margin);
+        margin-bottom: 0;
+    }
 
     .logo {
         width: 29.8%;
