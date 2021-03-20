@@ -21,7 +21,8 @@
     & > div {
         display: flex;
         flex-flow: column nowrap;
-        justify-content: end;
+        // justify-content: end;
+        padding-top: func.toRem(44px);
         height: func.toRem(200px);
         background-repeat: no-repeat;
         background-size: 20%;

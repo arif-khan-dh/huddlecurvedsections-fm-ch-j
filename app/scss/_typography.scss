@@ -164,4 +164,11 @@ input {
             font-size: fonts.$size-xxsm;
         }
     }
+
+    .phone {
+
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-xxxsm;
+        }
+    }
 }

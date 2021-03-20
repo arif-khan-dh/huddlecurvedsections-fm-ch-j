@@ -5,26 +5,46 @@
 
 
 .footer {
-    padding: func.toRem(170px) func.toRem(40px) func.toRem(65px);
+    padding: 0 func.toRem(40px) func.toRem(65px);
     display: flex;
     flex-flow: column nowrap;
-    background:
-        url(../../../images/bg-footer-top-mobile.svg) top / 100% 8% no-repeat,
-        linear-gradient(white 7%, colors.$very-dark-cyan 7%, colors.$very-dark-cyan);
+    position: relative;
 
     @include mixin.breakpoint-up(large) {
         flex-direction: row-reverse;
         justify-content: space-between;
-        padding: func.toRem(140px) func.toRem(58px) func.toRem(48px);
+        padding: func.toRem(140px) func.toRem(58px) func.toRem(58px);        
+        padding-top: 0;
+        
+    }
+    .footer-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        left: 0;
+
         background:
-            url(../../../images/bg-footer-top-desktop.svg) top / 100% 8% no-repeat,
-            linear-gradient(white 8%, colors.$very-dark-cyan 8%, colors.$very-dark-cyan);
+            url(../../../images/bg-footer-top-mobile.svg) top / 100% 8% no-repeat,
+            linear-gradient(white 7%, colors.$very-dark-cyan 7%, colors.$very-dark-cyan);  
+
+        @include mixin.breakpoint-up(large) {
+            width: 100vw;
+            left: calc(calc(-50vw + 50%) - 8.5px);
+
+            background:
+                url(../../../images/bg-footer-top-desktop.svg) top / 100% 8% no-repeat,
+                linear-gradient(white 8%, colors.$very-dark-cyan 8%, colors.$very-dark-cyan);  
+        }
     }
     
     .newsletter {
+        z-index: 1;
+        margin-top: func.toRem(170px);
 
         @include mixin.breakpoint-up(large) {
             width: func.toRem(260px);
+            margin-top: func.toRem(140px);
         }
 
         .text {
@@ -48,7 +68,6 @@
                 flex-direction: row;
                 align-items: flex-start;
                 justify-content: space-between;
-
             }
 
             .email {                
@@ -130,10 +149,12 @@
     .contact {
         --icon-padding-right: #{func.toRem(22px)};
         margin-top: func.toRem(155px);
+        z-index: 1;
 
         @include mixin.breakpoint-up(large) {
             margin-top: 0;
-            width: func.toRem(200px);
+            width: func.toRem(200px);            
+            margin-top: func.toRem(140px);
         }
 
         .logo {
@@ -163,6 +184,7 @@
 
         .phone, .email {
             display: flex;
+            align-items: center;
 
             img {
                 display: inline-block;
@@ -170,7 +192,7 @@
                 height: func.toRem(28px);
 
                 @include mixin.breakpoint-up(large) {
-                    height: func.toRem(16px);
+                    height: func.toRem(10px);
                     padding-right: func.toRem(12px);
                 }
             }            
@@ -197,7 +219,7 @@
             display: flex;
 
             @include mixin.breakpoint-up(large) {
-                margin-top: func.toRem(40px);
+                margin-top: func.toRem(30px);
             }
 
             svg {
@@ -260,7 +282,7 @@
                     padding: func.toRem(4px) 0 func.toRem(4px) func.toRem(10px);
 
                     @include mixin.breakpoint-up(large) {
-                        padding: func.toRem(3px) 0 func.toRem(3px) func.toRem(6px);
+                        padding: func.toRem(3px) 0 func.toRem(3px) func.toRem(5px);
                     }
                 }
 

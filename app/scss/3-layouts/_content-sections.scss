@@ -7,25 +7,41 @@
     margin-top: func.toRem(36px);
 
     .section {
+        position: relative;
+        // border: 1px solid red;
         height: func.toRem(1062px);
         display: flex;
         flex-flow: column nowrap;
-        justify-content: end;
         align-items: center;
-        padding-bottom: func.toRem(180px);
+        justify-content: center;
 
         @include mixin.breakpoint-up(large) {
             height: func.toRem(425px);
             flex-flow: row-reverse nowrap;
             justify-content: space-evenly;
             padding-bottom: 0;
+            position: relative;
+        }
+
+        .section-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+
+            @include mixin.breakpoint-up(large) {   
+                width: calc(100vw - #{func.toRem(17px)}); // vertical scrollber: 17px - not sure its always true 
+            }
         }
 
         .hero {
             width: 70%;
+            z-index: 1;
+            margin-top: func.toRem(298px);
 
             @include mixin.breakpoint-up(large) {
                 width: 35%;
+                margin-top: 0;             
             }
 
             img {
@@ -33,14 +49,16 @@
             }
         }
 
-
         .content {
             width: 80%;
             margin-top: func.toRem(110px);
+            margin-bottom: func.toRem(180px);
+            z-index: 1;
 
             @include mixin.breakpoint-up(large) {
                 width: 35%;
                 margin-top: 0;
+                margin-bottom: 0;
             }
 
             .text {
@@ -53,17 +71,21 @@
         }
 
         &:first-child {
-            background:
-                url(.././../../images/bg-section-top-mobile-1.svg) top / 100% 10% no-repeat,
-                url(../../../images/bg-section-bottom-mobile-1.svg) bottom / 100% 10% no-repeat,
-                linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
-            
-            @include mixin.breakpoint-up(large) {
+
+            .section-bg {
                 background:
-                    url(.././../../images/bg-section-top-desktop-1.svg) top / 100% 10% no-repeat,
-                    url(../../../images/bg-section-bottom-desktop-1.svg) bottom / 100% 10% no-repeat,
-                    linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
-                
+                        url(.././../../images/bg-section-top-mobile-1.svg) top / 100% 10% no-repeat,
+                        url(../../../images/bg-section-bottom-mobile-1.svg) bottom / 100% 10% no-repeat,
+                        linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
+
+
+                @include mixin.breakpoint-up(large) {   
+                    width: calc(100vw - #{func.toRem(17px)}); // vertical scrollber: 17px - not sure its always true 
+                    background:
+                        url(.././../../images/bg-section-top-desktop-1.svg) top / 100% 10% no-repeat,
+                        url(../../../images/bg-section-bottom-desktop-1.svg) bottom / 100% 10% no-repeat,
+                        linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
+                }
             }
         }
 
@@ -77,27 +99,22 @@
         }
 
         &:last-child {
-            background:
-                url(.././../../images/bg-section-top-mobile-2.svg) top / 100% 10% no-repeat,
-                url(../../../images/bg-section-bottom-mobile-2.svg) bottom / 100% 10% no-repeat,
-                linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
-            // padding-bottom: func.toRem(300px);
 
-            @include mixin.breakpoint-up(large) {
+            .section-bg {
                 background:
-                    url(.././../../images/bg-section-top-desktop-2.svg) top / 100% 10% no-repeat,
-                    url(../../../images/bg-section-bottom-desktop-2.svg) bottom / 100% 10% no-repeat,
-                    linear-gradient(white 10%, colors.$very-pale-blue 10% 92%, white 92%);
-                
+                        url(.././../../images/bg-section-top-mobile-2.svg) top / 100% 10% no-repeat,
+                        url(../../../images/bg-section-bottom-mobile-2.svg) bottom / 100% 10% no-repeat,
+                        linear-gradient(white 10%, colors.$very-pale-blue 10% 92%, white 92%);
+
+                @include mixin.breakpoint-up(large) {
+                    width: calc(100vw - #{func.toRem(17px)});
+    
+                    background:
+                        url(.././../../images/bg-section-top-desktop-2.svg) top / 100% 10% no-repeat,
+                        url(../../../images/bg-section-bottom-desktop-2.svg) bottom / 100% 10% no-repeat,
+                        linear-gradient(white 10%, colors.$very-pale-blue 10% 92%, white 92%);
+                }
             }
         }
-
-        // .headline {
-        //     font-family: fonts.$font-poppins;
-        //     font-size: fonts.$size-xlg;
-        //     color: colors.$very-dark-cyan;
-        // }
-
-
     }
 }
