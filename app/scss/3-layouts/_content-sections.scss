@@ -6,9 +6,16 @@
 .sections {
     margin-top: func.toRem(36px);
 
+    @include mixin.breakpoint-up(medium){
+        margin-top: func.toRem(60px);
+    }
+
+    @include mixin.breakpoint-up(xlarge){
+        margin-top: func.toRem(80px);
+    }
+
     .section {
         position: relative;
-        // border: 1px solid red;
         height: func.toRem(1062px);
         display: flex;
         flex-flow: column nowrap;
@@ -21,6 +28,14 @@
             justify-content: space-evenly;
             padding-bottom: 0;
             position: relative;
+        }
+
+        @include mixin.breakpoint-up(xlarge) {
+            height: func.toRem(525px);
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            height: func.toRem(625px);
         }
 
         .section-bg {
@@ -95,6 +110,14 @@
             @include mixin.breakpoint-up(large) {
                 height: func.toRem(345px);
                 flex-direction: row;
+            }
+
+            @include mixin.breakpoint-up(xlarge) {
+                height: func.toRem(445px);
+            }
+    
+            @include mixin.breakpoint-up(xxlarge) {
+                height: func.toRem(545px);
             }
         }
 

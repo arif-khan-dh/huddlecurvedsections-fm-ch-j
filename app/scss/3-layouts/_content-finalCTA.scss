@@ -17,6 +17,14 @@
         justify-content: center;
     }
 
+    @include  mixin.breakpoint-up(xlarge) {
+        height: func.toRem(363px);
+    }
+
+    @include  mixin.breakpoint-up(xxlarge) {
+        height: func.toRem(413px);
+    }
+
     .headline {
         width: 65%;
     }
@@ -27,6 +35,10 @@
 
         @include  mixin.breakpoint-up(large) {
             margin-top: func.toRem(22px);
+        }
+
+        @include  mixin.breakpoint-up(xlarge) {
+            margin-top: func.toRem(44px);
         }
     }
 

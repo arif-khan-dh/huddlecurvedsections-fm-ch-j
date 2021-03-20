@@ -21,7 +21,6 @@
     & > div {
         display: flex;
         flex-flow: column nowrap;
-        // justify-content: end;
         padding-top: func.toRem(44px);
         height: func.toRem(200px);
         background-repeat: no-repeat;
@@ -30,6 +29,10 @@
 
         @include mixin.breakpoint-up(medium) {
             height: func.toRem(140px);
+        }
+
+        @include mixin.breakpoint-up(medium) {
+            height: func.toRem(180px);
         }
 
         &:first-child {

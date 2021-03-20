@@ -1,7 +1,11 @@
 @use './functions' as func;
+@use '../1-abstracts/colors';
 
 $breakpoint-up: (
-    "xlarge": func.toRem(1203px), 
+    "xxxxlarge": func.toRem(1440px),
+    "xxxlarge": func.toRem(1210px),
+    "xxlarge": func.toRem(1000px),
+    "xlarge": func.toRem(860px),
     "large": func.toRem(740px), // have to find out why it works
     "medium": func.toRem(612px), 
     "small": func.toRem(562px)
@@ -22,5 +26,9 @@ $breakpoint-up: (
 @mixin hoverNfocus() {
     &:hover, &:focus {
         @content;
+    }
+
+    &:focus{
+        outline: 1px solid colors.$pink;
     }
 }

@@ -13,7 +13,7 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        width: 79.2%;        
+        width: 79.2%;  
 
         .headline {
             width: 89.3%;
@@ -26,18 +26,16 @@
                 margin-top: func.toRem(16px);
                 width: 75%;
             }
+
+            @include mixin.breakpoint-up(xlarge) {
+                width: 70%;
+            }
         }
 
         .btn {
             margin-top: func.toRem(72px);
             width: 68%;
-
-            @include mixin.breakpoint-up(medium) {
-                --primary-btn-width: calc(#{func.toRem(303px)} + #{func.toRem(356px)});
-                width: calc(var(--primary-btn-width) - 80%);
-                min-width: 0;
-                margin-top: func.toRem(22px);
-            }
+            max-width: func.toRem(303px);
         }
 
     }
@@ -45,10 +43,11 @@
     .image {
         margin-top: func.toRem(156px);
         width: 80%;
-        max-width: func.toRem(512px);
+        max-width: func.toRem(1000px);
 
         @include mixin.breakpoint-up(medium) {
             margin-top: var(--desktop-section-gap);
+            width: 70%;
         }
 
         img {

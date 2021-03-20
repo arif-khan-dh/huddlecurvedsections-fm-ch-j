@@ -9,7 +9,7 @@
     // Length
     --mobile-header-margin: #{func.toRem(35px)};
     --desktop-header-margin: calc(var(--mobile-header-margin) + #{func.toRem(5px)});
-    --desktop-section-gap: #{func.toRem(60px)};  // Content,
+    --desktop-section-gap: #{func.toRem(120px)};  // Content,
     
     // Time
     --btn-transition: 200ms;
@@ -30,9 +30,6 @@ body {
 
     display: flex;
     justify-content: center;
-
-    //debug
-    // background-color: gray;
 }
 
 img {
@@ -49,6 +46,6 @@ img {
 
     @include mixin.breakpoint-up(small) {
         width: 100%;
-        max-width: func.toRem(720px);
+        max-width: func.toRem(1440px);
     }
 }

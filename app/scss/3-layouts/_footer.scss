@@ -17,6 +17,12 @@
         padding-top: 0;
         
     }
+
+    @include mixin.breakpoint-up(xlarge) {
+        justify-content: space-evenly;
+        padding: 0 0 func.toRem(58px);
+        
+    }
     .footer-bg {
         position: absolute;
         width: 100%;
@@ -33,8 +39,8 @@
             left: calc(calc(-50vw + 50%) - 8.5px);
 
             background:
-                url(../../../images/bg-footer-top-desktop.svg) top / 100% 8% no-repeat,
-                linear-gradient(white 8%, colors.$very-dark-cyan 8%, colors.$very-dark-cyan);  
+                url(../../../images/bg-footer-top-desktop.svg) top / 100% 12% no-repeat,
+                linear-gradient(white 12%, colors.$very-dark-cyan 12%, colors.$very-dark-cyan);  
         }
     }
     
@@ -43,13 +49,21 @@
         margin-top: func.toRem(170px);
 
         @include mixin.breakpoint-up(large) {
-            width: func.toRem(260px);
+            width: 43%;
             margin-top: func.toRem(140px);
+        }
+
+        @include mixin.breakpoint-up(xlarge) {
+            width: 40%;
         }
 
         .text {
             margin-top: func.toRem(35px);
             
+            @include mixin.breakpoint-up(large) {
+                margin-top: func.toRem(14px);
+            }
+
             @include mixin.breakpoint-up(large) {
                 margin-top: func.toRem(14px);
             }
@@ -67,14 +81,21 @@
                 margin-top: func.toRem(20px);
                 flex-direction: row;
                 align-items: flex-start;
-                justify-content: space-between;
+            }
+
+            @include mixin.breakpoint-up(xlarge) {
+                margin-top: func.toRem(30px);                
+            }
+
+            @include mixin.breakpoint-up(xxxlarge) {
+                width: 90%;               
             }
 
             .email {                
                 width: 100%;
 
                 @include mixin.breakpoint-up(large) {
-                    width: func.toRem(160px);
+                    width: 61%;
                 }
     
                 input {           
@@ -87,12 +108,14 @@
                     @include mixin.breakpoint-up(large) {
                         height: var(--height);
                         border-radius: var(--border-radius);
-                        width: func.toRem(160px);
-                        padding: 0 .75rem;
+                        // width: func.toRem(160px);
+                        padding: 0 0.75rem;
                     }
-    
-                    &::placeholder {
-                        opacity: 0.3;
+
+                    @include mixin.breakpoint-up(xlarge) {
+                        height: calc(var(--height) * 1.4);
+                        border-radius: calc(var(--border-radius) * 2);
+                        padding: 0 1.5rem;
                     }
     
                     &:focus {
@@ -116,6 +139,10 @@
                     @include mixin.breakpoint-up(large) {
                         margin-top: func.toRem(5px);
                     }
+
+                    @include mixin.breakpoint-up(xxlarge) {
+                        margin-left: 1rem;
+                    }
                 }
                 
                 input:invalid ~ .error-msg {
@@ -129,18 +156,22 @@
                 box-shadow: none;
                 border-radius: func.toRem(10px);
                 min-width: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
 
                 @include mixin.breakpoint-up(large) {
                     margin-top: 0;
-                    width: func.toRem(80px);
+                    margin-left: 4%;
+                    // width: func.toRem(80px);
+                    width: 31%;
                     height: var(--height);
                     border-radius: var(--border-radius);
-                    padding: 3px;
                 }
 
-                &:hover, &:focus{
-                    filter: brightness(1.5);
-                    box-shadow: none;
+                @include mixin.breakpoint-up(xlarge) {
+                    height: calc(var(--height) * 1.4);
+                    border-radius: calc(var(--border-radius) * 2);
                 }
             }
         }
@@ -152,8 +183,7 @@
         z-index: 1;
 
         @include mixin.breakpoint-up(large) {
-            margin-top: 0;
-            width: func.toRem(200px);            
+            width: 33%;           
             margin-top: func.toRem(140px);
         }
 
@@ -180,6 +210,10 @@
             @include mixin.breakpoint-up(large) {
                 margin-top: func.toRem(12px);                
             }
+
+            @include mixin.breakpoint-up(xxlarge) {
+                margin-top: func.toRem(30px);                
+            }
         }
 
         .phone, .email {
@@ -195,6 +229,11 @@
                     height: func.toRem(10px);
                     padding-right: func.toRem(12px);
                 }
+
+                @include mixin.breakpoint-up(xxlarge) {
+                    height: func.toRem(14px);
+                    padding-right: func.toRem(12px);
+                }
             }            
         }
 
@@ -203,6 +242,10 @@
 
             @include mixin.breakpoint-up(large) {
                 margin-top: func.toRem(14px);
+            }
+
+            @include mixin.breakpoint-up(xxlarge) {
+                margin-top: func.toRem(24px);
             }
         }
 
@@ -222,6 +265,10 @@
                 margin-top: func.toRem(30px);
             }
 
+            @include mixin.breakpoint-up(xxlarge) {
+                margin-top: func.toRem(50px);
+            }
+
             svg {
                 width: func.toRem(36px);
                 height: func.toRem(36px);
@@ -230,7 +277,7 @@
                     width: func.toRem(24px);
                     height: func.toRem(24px);
                 }
-                
+
                 path {
                     fill: white;
                     transition: fill var(--btn-transition) ease-in-out;

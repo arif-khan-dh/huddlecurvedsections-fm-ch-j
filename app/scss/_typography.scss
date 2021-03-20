@@ -27,8 +27,12 @@ input {
         font-size: fonts.$size-xxsm;
     }
 
-    &::placeholder {
-        color: colors.$very-dark-cyan;
+    @include mixin.breakpoint-up(xlarge) {
+        font-size: fonts.$size-xsm;
+    }
+
+    @include mixin.breakpoint-up(xxxlarge) {
+        font-size: fonts.$size-sm;
     }
 }
 
@@ -46,14 +50,15 @@ input {
 .primary {
     color: white;
     font-weight: 600;
+    font-size: fonts.$size-xsm;
 
     @include mixin.breakpoint-up(medium) {
-        font-size: fonts.$size-xsm;
+        // font-size: fonts.$size-xsm;
     }
 
-    @include mixin.breakpoint-up(large) {
-        font-size: fonts.$size-xxsm;
-    }
+    // @include mixin.breakpoint-up(large) {
+    //     font-size: fonts.$size-xxsm;
+    // }
 }
 
 .headline {
@@ -63,7 +68,15 @@ input {
     text-shadow: 0 0 func.toRem(1px) rgba($color: colors.$very-dark-cyan, $alpha: 0.5) ;
 
     @include mixin.breakpoint-up(large) {
-        font-size: var(--desktop-headline-font-size);
+        font-size: fonts.$size-xlg;
+    }
+
+    @include mixin.breakpoint-up(xlarge) {
+        font-size: fonts.$size-xxlg;
+    }
+
+    @include mixin.breakpoint-up(xxxlarge) {
+        font-size: fonts.$size-xxxlg;
     }
 }
 
@@ -72,7 +85,11 @@ input {
     text-shadow: 0 0 func.toRem(1px) rgba($color: colors.$very-dark-cyan, $alpha: 0.5) ;
 
     @include mixin.breakpoint-up(large) {
-        font-size: var(--desktop-body-font-size);
+        font-size: fonts.$size-sm;
+    }
+
+    @include mixin.breakpoint-up(xxlarge) {
+        font-size: fonts.$size-md;
     }
 }
 
@@ -87,6 +104,14 @@ input {
         @include mixin.breakpoint-up(large) {
             font-size: fonts.$size-xlg;
         }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-xxlg;
+        }
+
+        @include mixin.breakpoint-up(xxxlarge) {
+            font-size: fonts.$size-xxxlg;
+        }
     }
 
     .sub-headline {
@@ -94,8 +119,7 @@ input {
         font-size: fonts.$size-lg;
 
         @include mixin.breakpoint-up(small) {
-            font-size: fonts.$size-md;
-            
+            font-size: fonts.$size-md;            
         }
 
         @include mixin.breakpoint-up(medium) {
@@ -105,17 +129,37 @@ input {
         @include mixin.breakpoint-up(large) {
             font-size: fonts.$size-xsm;
         }
+
+        @include mixin.breakpoint-up(xlarge) {
+            font-size: fonts.$size-sm;
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-md;
+        }
+
+        @include mixin.breakpoint-up(xxxlarge) {
+            font-size: fonts.$size-xlg;
+        }
     }
 }
 
 .stats {
     .number {
         color: colors.$very-dark-cyan;
-        font-size: fonts.$size-xxxxxxxlg;
+        font-size: fonts.$size-xxxxxxlg;
         font-weight: 700;
 
         @include mixin.breakpoint-up(medium) {
             font-size: fonts.$size-xxxxxlg;
+        }
+
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-xxxxxxlg;
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-xxxxxxxlg;
         }
     }
 
@@ -133,7 +177,19 @@ input {
         font-size: fonts.$size-lg;
 
         @include mixin.breakpoint-up(large) {
-            font-size: fonts.$size-xxxsm;
+            font-size: fonts.$size-xxsm;
+        }
+
+        @include mixin.breakpoint-up(xlarge) {
+            font-size: fonts.$size-xsm;
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-sm;
+        }
+
+        @include mixin.breakpoint-up(xxxlarge) {
+            font-size: fonts.$size-md;
         }
     }
 }
@@ -148,13 +204,44 @@ input {
         font-size: fonts.$size-lg;
 
         @include mixin.breakpoint-up(large) {
-            line-height: var(--line-height);
             font-size: fonts.$size-xxxsm;
+        }
+
+        @include mixin.breakpoint-up(xlarge) {
+            font-size: fonts.$size-xsm;
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-sm;
+        }
+
+        @include mixin.breakpoint-up(xxxlarge) {
+            font-size: fonts.$size-md;
+        }
+    }
+
+    .btn {
+        font-size: fonts.$size-md;
+
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-xxxsm;
+        }
+
+        @include mixin.breakpoint-up(xlarge) {
+            font-size: fonts.$size-xxsm;
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-xsm;
         }
     }
 
     .error-msg {        
         color: colors.$light-red;
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-xsm;
+        }
     }
 
     .phone, .email {
@@ -163,12 +250,36 @@ input {
         @include mixin.breakpoint-up(large) {
             font-size: fonts.$size-xxsm;
         }
+
+        @include mixin.breakpoint-up(xlarge) {
+            font-size: fonts.$size-sm;
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-md;
+        }
+
+        @include mixin.breakpoint-up(xxxlarge) {
+            font-size: fonts.$size-lg;
+        }
     }
 
     .phone {
 
         @include mixin.breakpoint-up(large) {
             font-size: fonts.$size-xxxsm;
+        }
+
+        @include mixin.breakpoint-up(xlarge) {
+            font-size: fonts.$size-xsm;
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-sm;
+        }
+
+        @include mixin.breakpoint-up(xxxlarge) {
+            font-size: fonts.$size-md;
         }
     }
 }

@@ -9,9 +9,12 @@
 }
 
 .primary {
+    height: func.toRem(55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-width: func.toRem(250px);
     background-color: colors.$pink;
-    padding: func.toRem(18px) 0;
     box-shadow: 0 func.toRem(5px) func.toRem(8px) rgba($color: rgb(175, 173, 173), $alpha: 0.8);
     transition: filter var(--btn-transition) ease-in-out, 
     box-shadow var(--btn-transition) ease-in-out;

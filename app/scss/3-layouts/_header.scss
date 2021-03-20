@@ -15,9 +15,19 @@
         margin-bottom: 0;
     }
 
+    @include mixin.breakpoint-up(large) {
+        margin: calc(calc(var(--desktop-header-margin) - #{func.toRem(22px)}) + 4.5%);
+        margin-bottom: 0;
+    }
+
+    @include mixin.breakpoint-up(xxxxlarge) {
+        margin: calc(var(--desktop-header-margin) * 2);
+        margin-bottom: 0;
+    }
+
     .logo {
         width: 29.8%;
-        // width: func.toRem(146px);
+        max-width: func.toRem(240px);
 
         img{
             width: 100%;
@@ -39,5 +49,15 @@
             color: colors.$light-pink;
             box-shadow: 0 0 4px rgba($color: mix(colors.$very-dark-cyan, colors.$pink, 40%), $alpha: 0.7);
         }
+
+        @include mixin.breakpoint-up(large) {
+            font-size: fonts.$size-sm;
+            padding: func.toRem(8px) func.toRem(35px);        
+        }
+
+        @include mixin.breakpoint-up(xxlarge) {
+            font-size: fonts.$size-md;
+        }
+
     }
 }
