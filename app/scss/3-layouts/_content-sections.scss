@@ -95,6 +95,15 @@
 
 
                 @include mixin.breakpoint-up(large) {   
+                    width: 100%; // vertical scrollber: 17px - not sure its always true 
+                    
+                    background:
+                        url(.././../../images/bg-section-top-desktop-1.svg) top / 100% 10% no-repeat,
+                        url(../../../images/bg-section-bottom-desktop-1.svg) bottom / 100% 10% no-repeat,
+                        linear-gradient(white 10%, colors.$very-pale-blue 10% 90%, white 90%);
+                }
+
+                @include mixin.breakpoint-up(xxxxlarge) {   
                     width: calc(100vw - #{func.toRem(17px)}); // vertical scrollber: 17px - not sure its always true 
                     background:
                         url(.././../../images/bg-section-top-desktop-1.svg) top / 100% 10% no-repeat,
@@ -129,7 +138,17 @@
                         url(../../../images/bg-section-bottom-mobile-2.svg) bottom / 100% 10% no-repeat,
                         linear-gradient(white 10%, colors.$very-pale-blue 10% 92%, white 92%);
 
+
                 @include mixin.breakpoint-up(large) {
+                    width: 100%;
+    
+                    background:
+                        url(.././../../images/bg-section-top-desktop-2.svg) top / 100% 10% no-repeat,
+                        url(../../../images/bg-section-bottom-desktop-2.svg) bottom / 100% 10% no-repeat,
+                        linear-gradient(white 10%, colors.$very-pale-blue 10% 92%, white 92%);
+                }
+
+                @include mixin.breakpoint-up(xxxxlarge) {
                     width: calc(100vw - #{func.toRem(17px)});
     
                     background:

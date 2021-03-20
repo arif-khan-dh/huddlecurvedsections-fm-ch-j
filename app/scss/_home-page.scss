@@ -36,16 +36,11 @@ img {
     display: block;
 }
 
-.container {    
-    width: func.toRem(562px);
+.container {
+    width: 100%;
     min-width: func.toRem(360px);
+    max-width: func.toRem(1440px);
     display: flex;
     flex-flow: column nowrap;
     background-color: white;
-
-
-    @include mixin.breakpoint-up(small) {
-        width: 100%;
-        max-width: func.toRem(1440px);
-    }
 }
