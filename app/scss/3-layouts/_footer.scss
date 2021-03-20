@@ -40,8 +40,17 @@
 
             background:
                 url(../../../images/bg-footer-top-desktop.svg) top / 100% 12% no-repeat,
-                linear-gradient(white 12%, colors.$very-dark-cyan 12%, colors.$very-dark-cyan);  
+                linear-gradient(white 11.5%, colors.$very-dark-cyan 11.5%, colors.$very-dark-cyan);  
         }
+
+        // @include mixin.breakpoint-up(large) {
+        //     width: 100vw;
+        //     left: calc(calc(-50vw + 50%) - 8.5px);
+
+        //     background:
+        //         url(../../../images/bg-footer-top-desktop.svg) top / 100% 12% no-repeat,
+        //         linear-gradient(white 12%, colors.$very-dark-cyan 12%, colors.$very-dark-cyan);  
+        // }
     }
     
     .newsletter {

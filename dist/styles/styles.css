@@ -731,7 +731,7 @@ input {
   .footer .footer-bg {
     width: 100vw;
     left: calc(calc(-50vw + 50%) - 8.5px);
-    background: url(../../../images/bg-footer-top-desktop.svg) top/100% 12% no-repeat, linear-gradient(white 12%, #00252e 12%, #00252e);
+    background: url(../../../images/bg-footer-top-desktop.svg) top/100% 12% no-repeat, linear-gradient(white 11.5%, #00252e 11.5%, #00252e);
   }
 }
 .footer .newsletter {
